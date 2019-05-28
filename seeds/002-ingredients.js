@@ -163,98 +163,87 @@ exports.seed = function(knex, Promise) {
           recipe_id: 2
         },
         {
-          name: 'small yellow onion, coarsely chopped',
+          name: 'bacon, smoked, not frozen',
           quantity: 0.5,
-          'unit of measurement': 'small yellow onion',
+          'unit of measurement': 'pounds',
           recipe_id: 3
         },
         {
-          name: 'garlic',
+          name: 'bacon, frozen slightly',
+          quantity: 1,
+          'unit of measurement': 'pounds',
+          recipe_id: 3
+        },
+        {
+          name: 'ground beef 90% or better',
           quantity: 2,
-          'unit of measurement': 'cloves, minced',
+          'unit of measurement': 'pounds',
           recipe_id: 3
         },
         {
-          name: 'extra-lean ground beef',
+          name: 'garlic powder or granulated garlic',
+          quantity: 1.5,
+          'unit of measurement': 'teaspoons',
+          recipe_id: 3
+        },
+        {
+          name: 'grated onion',
+          quantity: 4,
+          'unit of measurement': 'tablespoons',
+          recipe_id: 3
+        },
+        {
+          name: 'freshly ground black pepper',
+          quantity: 0.5,
+          'unit of measurement': 'teaspoons',
+          recipe_id: 3
+        },
+        {
+          name: 'Worcestershire sauce, optional',
+          quantity: 2,
+          'unit of measurement': 'tablespoons',
+          recipe_id: 3
+        },
+        {
+          name: 'Cheddar, Gouda or American (an orange cheese)',
           quantity: 12,
-          'unit of measurement': 'ounces',
-          recipe_id: 3
-        },
-        {
-          name: 'Montreal steak spice',
-          quantity: 1,
-          'unit of measurement': 'tablespoons',
-          recipe_id: 3
-        },
-        {
-          name: 'Worcestershire sauce',
-          quantity: 2,
-          'unit of measurement': 'tablespoons'
-        },
-        {
-          name: 'finely ground cornmeal',
-          quantity: 2,
-          'unit of measurement': 'tablespoons',
-          recipe_id: 3
-        },
-        {
-          name: 'prepared whole-wheat pizza dough',
-          quantity: 1,
-          'unit of measurement': 'pound',
-          recipe_id: 3
-        },
-        {
-          name: 'jarred all-natural tomato sauce',
-          quantity: 0.75,
-          'unit of measurement': 'cup',
-          recipe_id: 3
-        },
-        {
-          name: 'jarred all-natural BBQ sauce',
-          quantity: 0.75,
-          'unit of measurement': 'cup',
-          recipe_id: 3
-        },
-        {
-          name: 'shredded low-fat mozzarella',
-          quantity: 1,
-          'unit of measurement': 'cup',
-          recipe_id: 3
-        },
-        {
-          name: 'large red onion',
-          quantity: 0.5,
-          'unit of measurement': 'large red onion',
-          recipe_id: 3
-        },
-        {
-          name: 'medium plum tomatoes, diced',
-          quantity: 2,
-          'unit of measurement': 'medium plum tomatoes',
-          recipe_id: 3
-        },
-        {
-          name: 'crispy bacon, crumbled',
-          quantity: 3,
           'unit of measurement': 'slices',
           recipe_id: 3
         },
         {
-          name: 'non-fat plain Greek yogurt',
-          quantity: 0.33,
-          'unit of measurement': 'cup',
+          name: 'Swiss, Provolone or Jack cheese (a white cheese)',
+          quantity: 12,
+          'unit of measurement': 'slices',
           recipe_id: 3
         },
         {
-          name: 'yellow or dijon mustard',
-          quantity: 3,
-          'unit of measurement': 'tablespoons',
+          name: 'red onion, slice',
+          quantity: 1,
+          'unit of measurement': 'red onion',
           recipe_id: 3
         },
         {
-          name: 'shredded iceberg lettuce',
-          quantity: 1.5,
-          'unit of measurement': 'cups',
+          name: 'tomato, slice',
+          quantity: 1,
+          'unit of measurement': 'tomato',
+          recipe_id: 3
+        },
+        {
+          name: 'Green Lettuce',
+          quantity: 1,
+          'unit of measurement': 'head',
+          recipe_id: 3
+        },
+        {
+          name: 'Brioche Buns',
+          quantity: 1,
+          'unit of measurement': 'package of 12',
+          recipe_id: 3
+        },
+        {
+          name: 'Butter',
+          quantity: 1,
+          'unit of measurement': 'stick',
           recipe_id: 3
         }
       ]);
