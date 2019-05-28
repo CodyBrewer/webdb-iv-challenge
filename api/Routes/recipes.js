@@ -4,7 +4,7 @@ const db = require('../Models/recipes');
 
 const recipesRouter = express.Router();
 
-const { validateRecipesId } = require('../../Middleware');
+const { validateRecipeId } = require('../../Middleware');
 const { getRecipes, addRecipe } = db;
 recipesRouter.use((req, res, next) => {
   console.log('recipesRouter is working');
@@ -18,6 +18,14 @@ recipesRouter.get('/', async (req, res) => {
     res.status(200).json(Recipes);
   } catch (error) {
     console.log(error);
+    res.status(500).json({ message: error.message });
+  }
+});
+
+recipesRouter.get('/:id', validateRecipeId, (req, res) => {
+  try {
+    res.status(200).json(req.recipe);
+  } catch (error) {
     res.status(500).json({ message: error.message });
   }
 });

@@ -9,5 +9,11 @@ const getRecipes = () => {
 const addRecipe = (recipe) => {
   return db('recipes').insert(recipe);
 }
-
+// - add a method called `getRecipe(id)` to your data access library that should return the recipe with the provided `id`. The recipe should include:
+//   - name of the dish.
+//   - name of the recipe.
+//   - the list of ingredients with the quantity.
+const getRecipe = id => {
+  return db('recipes').join('dishes', "recipes.dish_id", 'dishes.id').join('ingredients', 'ingredients.recipe_id', 'recipes_id').where('recipes.id'. id).select('dishes.name', 'recipes.name', 'ingredients.*')
+}
 module.exports = { getRecipes, addRecipe };
