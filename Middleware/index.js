@@ -13,13 +13,15 @@ const validateDishesId = async (req, res, next) => {
       res.status(404).json({ message: 'dish not found; invalid id' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Failed to process request' });
+    res.status(500).json({ message: error.message });
   }
 };
 const validateRecipeId = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const recipe = await recipes.findById(id);
+    console.log(`id`, id);
+    const recipe = await recipes.getRecipe(id);
+    console.log(`recipe`, recipe);
     if (recipe) {
       req.recipe = recipe;
       next();
@@ -28,7 +30,7 @@ const validateRecipeId = async (req, res, next) => {
       console.log(`recipe is `, recipe);
     }
   } catch (error) {
-    res.status(500).json({ message: 'Failed to process request' });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -42,6 +44,7 @@ const requiredBody = (req, res, next) => {
     res.status(400).json({ message: 'Please include request body' });
   }
 };
+
 module.exports = {
   validateDishesId,
   validateRecipeId,
