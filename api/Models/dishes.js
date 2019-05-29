@@ -21,4 +21,16 @@ const getDish = id => {
     );
 };
 
-module.exports = { getDishes, addDish, getDish };
+const deleteDish = id => {
+  return db('dishes')
+    .where({ id })
+    .delete();
+};
+
+const updateDish = (id, changes) => {
+  return db('dishes')
+    .where({ id })
+    .update(changes);
+};
+
+module.exports = { getDishes, addDish, getDish, deleteDish, updateDish };
