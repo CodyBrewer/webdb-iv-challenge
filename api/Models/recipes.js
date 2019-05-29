@@ -19,11 +19,6 @@ const addRecipe = recipe => {
 //   - name of the dish.
 //   - name of the recipe.
 //   - the list of ingredients with the quantity.
-// SELECT d.name as 'Dish', r.name  as 'Recipe' , GROUP_CONCAT(i.quantity || ' ' || i.unit || ' '|| i.'name') as 'Ingredients'
-// FROM recipes as r
-// JOIN dishes as d ON r.dish_id = d.id
-// JOIN ingredients as i ON i.recipe_id = r.id
-// WHERE r.id = 1
 const getRecipe = id => {
   console.log('hello from getRecipe Method');
   return db('recipes')
@@ -37,4 +32,22 @@ const getRecipe = id => {
       )
     );
 };
-module.exports = { getRecipes, addRecipe, getRecipe };
+
+const deleteRecipe = id => {
+  return db('recipes')
+    .where({ id })
+    .delete();
+};
+
+const updateRecipe = (id, changes) => {
+  return db('recipes')
+    .where({ id })
+    .update(changes);
+};
+module.exports = {
+  getRecipes,
+  addRecipe,
+  getRecipe,
+  deleteRecipe,
+  updateRecipe
+};
