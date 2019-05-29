@@ -1,5 +1,5 @@
 const dishes = require('../api/Models/dishes');
-const recipes = require('../api/Models/recipes');
+const recipes = require('../api/Models/Ingredients');
 
 const validateDishesId = async (req, res, next) => {
   try {
@@ -33,6 +33,23 @@ const validateRecipeId = async (req, res, next) => {
     res.status(500).json({ message: error.message });
   }
 };
+const validateIngredientId = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    console.log(`id`, id);
+    const ingredient = await recipes.getIngredient(id);
+    console.log(`ingredient`, ingredient);
+    if (ingredient) {
+      req.recipe = ingredient;
+      next();
+    } else {
+      res.status(404).json({ message: 'ingredient not found; invalid id' });
+      console.log(`recipe is `, ingredient);
+    }
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 const requiredBody = (req, res, next) => {
   if (req.body && Object.keys(req.body).length) {
@@ -48,5 +65,6 @@ const requiredBody = (req, res, next) => {
 module.exports = {
   validateDishesId,
   validateRecipeId,
+  validateIngredientId,
   requiredBody
 };
