@@ -1,5 +1,6 @@
-const dishes = require('../api/Models/dishes');
-const recipes = require('../api/Models/Ingredients');
+const dishes = require('../models/dishes');
+const recipes = require('../models/recipes');
+const ingredients = require('../models/ingredients');
 
 const validateDishesId = async (req, res, next) => {
   try {

@@ -1,4 +1,5 @@
-db = require('../../data/dbConfig');
+const db = require('../data/dbConfig');
+
 const knex = require('knex');
 //- `getRecipes()`: should return a list of all recipes in the database including the **dish** they belong to.
 const getRecipes = () => {

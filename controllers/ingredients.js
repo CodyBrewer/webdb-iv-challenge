@@ -1,10 +1,10 @@
 const express = require('express');
 
-const db = require('../Models/Ingredients');
+const db = require('../models/ingredients');
 
 const ingredientsRouter = express.Router();
 
-const { validateIngredientId, requiredBody } = require('../../Middleware');
+const { validateIngredientId, requiredBody } = require('../middleware/index');
 const idBodyCheck = [validateIngredientId, requiredBody];
 
 const {

@@ -1,9 +1,9 @@
 const express = require('express');
 
-const db = require('../Models/dishes');
+const db = require('../models/dishes');
 
 const dishesRouter = express.Router();
-const { validateDishesId, requiredBody } = require('../../Middleware');
+const { validateDishesId, requiredBody } = require('../middleware/index');
 const idBodyCheck = [validateDishesId, requiredBody];
 const { getDishes, addDish, deleteDish, updateDish } = db;
 

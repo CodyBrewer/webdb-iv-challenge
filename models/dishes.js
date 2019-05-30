@@ -1,4 +1,4 @@
-const db = require('../../data/dbConfig');
+const db = require('../data/dbConfig');
 
 //return list of all dishes
 const getDishes = () => {

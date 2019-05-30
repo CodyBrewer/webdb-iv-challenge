@@ -3,9 +3,9 @@ const helmet = require('helmet');
 const logger = require('morgan');
 
 const server = express();
-const dishesRouter = require('../api/Routes/dishes.js');
-const recipesRouter = require('../api/Routes/recipes');
-const ingredientsRouter = require('../api/Routes/Ingredients');
+const dishesRouter = require('../controllers/dishes');
+const recipesRouter = require('../controllers/recipes');
+const ingredientsRouter = require('../controllers/ingredients');
 
 server.use(helmet());
 server.use(logger('dev'));

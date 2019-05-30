@@ -1,11 +1,12 @@
 const express = require('express');
 
-const db = require('../Models/recipes');
+const db = require('../models/recipes');
 
 const recipesRouter = express.Router();
 
-const { validateRecipeId, requiredBody } = require('../../Middleware');
+const { validateRecipeId, requiredBody } = require('../middleware/index');
 const idbodyCheck = [validateRecipeId, requiredBody];
+
 const { getRecipes, addRecipe, deleteRecipe, updateRecipe } = db;
 recipesRouter.use((req, res, next) => {
   console.log('recipesRouter is working');
