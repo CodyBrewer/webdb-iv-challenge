@@ -25,3 +25,11 @@ const updateInstruction = (id, changes) => {
     .where({ id })
     .update(changes);
 };
+
+module.exports = {
+  getInstruction,
+  getInstructions,
+  addInstruction,
+  deleteInstruction,
+  updateInstruction
+};
